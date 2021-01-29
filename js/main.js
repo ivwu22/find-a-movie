@@ -10,7 +10,7 @@ form.addEventListener('submit', (evt) => {
 })
 // document.addEventListener("DOMContentLoaded", () => {
     
-const getJoke = ('submit', (e) => {
+const getMovieData = ('submit', (e) => {
         // e.preventDefault();
         fetch(requestUrlTitle+input.value)
             .then((responseData) => {
@@ -18,11 +18,13 @@ const getJoke = ('submit', (e) => {
             })
             .then((jsonData) => {
                 // console.log(jsonData)
-                let runtime = jsonData.Runtime
-                info.innerHTML = runtime;
+                info.innerHTML = `${jsonData.Title}, ${jsonData.Year} it is about ${jsonData.Plot}`;
+                // info.innerHTML = jsonData.Plot;
+                // info.innerHTML = jsonData.title;
+                // info.innerHTML = jsonData.title;
             })
             .catch((error) => {
                 console.log("errorrrr:", error)
             });
     })
-form.addEventListener('submit', getJoke)
+form.addEventListener('submit', getMovieData)
