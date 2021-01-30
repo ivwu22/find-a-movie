@@ -6,7 +6,7 @@ const plot = document.getElementById('plot');
 const actors = document.getElementById("actors");
 const poster = document.getElementById('poster');
 
-let requestUrlTitle = "http://www.omdbapi.com/?apikey=&t=";
+let requestUrlTitle = "http://www.omdbapi.com/?apikey=b749840a&t=";
 let input = document.querySelector('#input')
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
