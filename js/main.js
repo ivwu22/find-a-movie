@@ -8,7 +8,7 @@ const poster = document.getElementById('poster');
 const movieList = document.getElementById("movies")
 
 let requestUrlTitle = "http://www.omdbapi.com/?apikey=b749840a&s=";
-let requestUrlName = "http://www.omdbapi.com/?apikey=b749840a&t="
+let requestUrlImDbId = "http://www.omdbapi.com/?apikey=b749840a&i="
 let input = document.querySelector('#input')
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
@@ -17,7 +17,7 @@ form.addEventListener('submit', (evt) => {
 })
 // document.addEventListener("DOMContentLoaded", () => {
 const getMovieDetails = (movie) => {
-    fetch(requestUrlName + (movie.target.innerHTML.toLowerCase()))
+    fetch(requestUrlImDbId + (movie.target.id))
     .then((response) => {
         return response.json();
     })
@@ -43,6 +43,7 @@ const getMovieData = ('submit', (e) => {
             .then((jsonData) => {
                 // console.log(jsonData)
                 let movie = jsonData.Search
+                console.log(jsonData.Search)
                 movie.forEach(addMovie)
                 // title.textContent = jsonData.Title;
                 // year.innerHTML = `This movie was released in ${jsonData.Year}`;
@@ -56,7 +57,9 @@ const getMovieData = ('submit', (e) => {
             })
             const addMovie = (movie) => {
                 let li = document.createElement('li');
+                li.setAttribute('id', movie.imdbID)
                 li.innerHTML = movie.Title;
+                console.log(movie.Title)
                 movieList.appendChild(li);
                 li.onclick = getMovieDetails
             }
