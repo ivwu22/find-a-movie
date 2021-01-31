@@ -18,6 +18,16 @@ form.addEventListener('submit', (evt) => {
     // console.log("fired")
     // console.log(input.value)
 })
+
+const clearMovieData = () => {
+    title.textContent = null;
+    year.innerHTML = null;
+    genre.innerHTML = null;
+    plot.innerHTML = null;
+    actors.innerHTML = null;
+    rating.innerHTML = null;
+    poster.src = "";
+}
 // document.addEventListener("DOMContentLoaded", () => {
 const getMovieDetails = (movie) => {
     //fetch with ImDbID instead of name becauseif movies has repeated names (mulan) it will just search mulan and return same results for bother
@@ -31,8 +41,8 @@ const getMovieDetails = (movie) => {
         genre.innerHTML = `Genre: ${responseJson.Genre}`;
         plot.innerHTML = `Brief plot: ${responseJson.Plot}`;
         actors.innerHTML = `Actors: ${responseJson.Actors}`;
-        rating.innerHTML = `IMDb Rating: ${responseJson.imdbRating}`
-        poster.src = responseJson.Poster
+        rating.innerHTML = `IMDb Rating: ${responseJson.imdbRating}`;
+        poster.src = responseJson.Poster;
     })
 }
     
@@ -41,6 +51,7 @@ const getMovieData = ('submit', (e) => {
         while (movieList.firstChild) {
             movieList.removeChild(movieList.firstChild)
         }
+        clearMovieData();
         fetch(requestUrlTitle+(input.value.toLowerCase()))
             .then((responseData) => {
                 return responseData.json();
@@ -62,6 +73,7 @@ const getMovieData = ('submit', (e) => {
                 genre.innerHTML = null;
                 plot.innerHTML = null;
                 actors.innerHTML = null;
+                rating.innerHTML = null;
                 poster.src = "";
             })
             const addMovie = (movie) => {
