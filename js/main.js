@@ -5,7 +5,10 @@ const genre = document.getElementById('genre');
 const plot = document.getElementById('plot');
 const actors = document.getElementById("actors");
 const poster = document.getElementById('poster');
-const movieList = document.getElementById("movies")
+const movieList = document.getElementById('movies');
+const rating = document.getElementById('rating')
+
+let jsonReturns = null;
 
 let requestUrlTitle = "http://www.omdbapi.com/?apikey=b749840a&s=";
 let requestUrlImDbId = "http://www.omdbapi.com/?apikey=b749840a&i="
@@ -17,6 +20,7 @@ form.addEventListener('submit', (evt) => {
 })
 // document.addEventListener("DOMContentLoaded", () => {
 const getMovieDetails = (movie) => {
+    //fetch with ImDbID instead of name becauseif movies has repeated names (mulan) it will just search mulan and return same results for bother
     fetch(requestUrlImDbId + (movie.target.id))
     .then((response) => {
         return response.json();
@@ -27,6 +31,7 @@ const getMovieDetails = (movie) => {
         genre.innerHTML = `Genre: ${responseJson.Genre}`;
         plot.innerHTML = `Brief plot: ${responseJson.Plot}`;
         actors.innerHTML = `Actors: ${responseJson.Actors}`;
+        rating.innerHTML = `IMDb Rating: ${responseJson.imdbRating}`
         poster.src = responseJson.Poster
     })
 }
@@ -41,25 +46,29 @@ const getMovieData = ('submit', (e) => {
                 return responseData.json();
             })
             .then((jsonData) => {
+                jsonReturns = jsonData;
                 // console.log(jsonData)
                 let movie = jsonData.Search
-                console.log(jsonData.Search)
+                // console.log(jsonData.Search)
                 movie.forEach(addMovie)
-                // title.textContent = jsonData.Title;
-                // year.innerHTML = `This movie was released in ${jsonData.Year}`;
-                // genre.innerHTML = `Genre: ${jsonData.Genre}`;
-                // plot.innerHTML = `Brief plot: ${jsonData.Plot}`;
-                // actors.innerHTML = `Actors: ${jsonData.Actors}`;
-                // poster.src = jsonData.Poster
             })
             .catch((error) => {
-                console.log("errorrrr:", error)
+                let errorMessage = document.createElement('div');
+                errorMessage.setAttribute('id', 'error');
+                errorMessage.innerHTML = (error, `Please try again. Reason: ${jsonReturns.Error}`);
+                movieList.appendChild(errorMessage)
+                title.textContent = null;
+                year.innerHTML = null;
+                genre.innerHTML = null;
+                plot.innerHTML = null;
+                actors.innerHTML = null;
+                poster.src = "";
             })
             const addMovie = (movie) => {
                 let li = document.createElement('li');
                 li.setAttribute('id', movie.imdbID)
                 li.innerHTML = movie.Title;
-                console.log(movie.Title)
+                // console.log(movie.Title)
                 movieList.appendChild(li);
                 li.onclick = getMovieDetails
             }

@@ -33,6 +33,11 @@ h1 {
     margin-left: 5%;
 }
 
-ul {
-    columns: 2;
+#error {
+    color: red;
 }
+
+/* ul {
+    columns: 2;
+} */
+
