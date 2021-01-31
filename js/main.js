@@ -16,8 +16,8 @@ form.addEventListener('submit', (evt) => {
     // console.log(input.value)
 })
 // document.addEventListener("DOMContentLoaded", () => {
-const getMovieDetails = (movieName) => {
-    fetch(requestUrlName + (movie.title.toLowerCase()))
+const getMovieDetails = (movie) => {
+    fetch(requestUrlName + (movie.target.innerHTML.toLowerCase()))
     .then((response) => {
         return response.json();
     })

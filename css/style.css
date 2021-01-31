@@ -7,6 +7,7 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: grid;
     text-align: center;
+    background-color: lavenderblush;
 }
 h1 {
     font-size: 75px;
@@ -25,4 +26,13 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     width: 30%;
+}
+
+#movies {
+    text-align: left;
+    margin-left: 5%;
+}
+
+ul {
+    columns: 2;
 }
