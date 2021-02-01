@@ -28,6 +28,17 @@ const clearMovieData = () => {
     rating.innerHTML = null;
     poster.src = "";
 }
+
+// const addMovieData = () => {
+//     title.textContent = responseJson.Title;
+//     year.innerHTML = `This was released in ${responseJson.Year}`;
+//     genre.innerHTML = `Genre: ${responseJson.Genre}`;
+//     plot.innerHTML = `Brief plot: ${responseJson.Plot}`;
+//     actors.innerHTML = `Actors: ${responseJson.Actors}`;
+//     rating.innerHTML = `IMDb Rating: ${responseJson.imdbRating}`;
+//     poster.src = responseJson.Poster;
+// }
+
 // document.addEventListener("DOMContentLoaded", () => {
 const getMovieDetails = (movie) => {
     //fetch with ImDbID instead of name becauseif movies has repeated names (mulan) it will just search mulan and return same results for bother
@@ -37,12 +48,12 @@ const getMovieDetails = (movie) => {
     })
     .then((responseJson) => {
         title.textContent = responseJson.Title;
-        year.innerHTML = `This movie was released in ${responseJson.Year}`;
         genre.innerHTML = `Genre: ${responseJson.Genre}`;
         plot.innerHTML = `Brief plot: ${responseJson.Plot}`;
         actors.innerHTML = `Actors: ${responseJson.Actors}`;
         rating.innerHTML = `IMDb Rating: ${responseJson.imdbRating}`;
         poster.src = responseJson.Poster;
+        
     })
 }
     
@@ -68,18 +79,12 @@ const getMovieData = ('submit', (e) => {
                 errorMessage.setAttribute('id', 'error');
                 errorMessage.innerHTML = (error, `Please try again. Reason: ${jsonReturns.Error}`);
                 movieList.appendChild(errorMessage)
-                title.textContent = null;
-                year.innerHTML = null;
-                genre.innerHTML = null;
-                plot.innerHTML = null;
-                actors.innerHTML = null;
-                rating.innerHTML = null;
-                poster.src = "";
+                clearMovieData();
             })
             const addMovie = (movie) => {
                 let li = document.createElement('li');
                 li.setAttribute('id', movie.imdbID)
-                li.innerHTML = movie.Title;
+                li.innerHTML = `${movie.Title} (${movie.Year})`;
                 // console.log(movie.Title)
                 movieList.appendChild(li);
                 li.onclick = getMovieDetails
