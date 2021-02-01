@@ -10,8 +10,8 @@ const rating = document.getElementById('rating')
 
 let jsonReturns = null;
 
-let requestUrlTitle = "http://www.omdbapi.com/?apikey="+key.apikey + "a&s=";
-let requestUrlImDbId = "http://www.omdbapi.com/?apikey=" + key.apikey + "a&i="
+let requestUrlTitle = "https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?apikey="+key.apikey + "a&s=";
+let requestUrlImDbId = "https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?apikey=" + key.apikey + "a&i="
 let input = document.querySelector('#input')
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
@@ -77,7 +77,7 @@ const getMovieData = ('submit', (e) => {
             .catch((error) => {
                 let errorMessage = document.createElement('div');
                 errorMessage.setAttribute('id', 'error');
-                errorMessage.innerHTML = (error, `Please try again. Reason: ${jsonReturns.Error}`);
+                errorMessage.textContent = (error, `Please try again. Reason: ${jsonReturns.error}`);
                 movieList.appendChild(errorMessage)
                 clearMovieData();
             })
