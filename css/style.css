@@ -15,15 +15,19 @@ h1 {
     color:rgb(151, 204, 151);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
-
+form {
+    padding-bottom: 20px;
+}
 #instructions {
-    color:rgb(135, 131, 224);
-    font-size:18px;
+    color:rgb(122, 117, 224);
+    font-size:20px;
     text-align: left;
     margin-left: 8.5%;
 }
 li { 
-    cursor: pointer; 
+    cursor: pointer;
+    color:rgb(33, 92, 33);
+    font-size: 18px;
 }
 li:hover {
     font-style: italic;
@@ -31,14 +35,42 @@ li:hover {
 }
 
 #title {
-    font-size: 50px;
-    color: blue;
+    font-size: 40px;
+    color: rgb(31, 93, 207);
 }
 
-#genre, #plot, #actors, #rating {
-    color:rgb(113, 112, 150);
+#genre {
+    color:rgb(142, 69, 151);
     font-size: 18px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: left;
+    margin-left: 7%;
+    padding-bottom: 1mm
+}
+
+#plot {
+    color:rgb(142, 69, 151);
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: left;
+    margin-left: 7%;
+    padding-bottom: 1mm;
+}
+#actors {
+    color:rgb(142, 69, 151);
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: left;
+    margin-left: 7%;
+    padding-bottom: 2mm
+}
+#rating {
+    color:rgb(142, 69, 151);
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: left;
+    margin-left: 7%;
+    padding-bottom: 1mm
 }
 
 #poster {
@@ -107,13 +139,21 @@ li:hover {
 }
 
 #input{
-    background-color: #dbc5f5;
-    padding-left: 10px;
-    border:1px solid #eeb44f
+    width: 35%;
+    box-sizing: border-box;
+    border: 2px solid rgb(228, 183, 115);
+    border-radius: 10px;
+    font-size: 17px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 5px 6px; 
+    background-repeat: no-repeat;
+    padding: 8px 10px 6px 34px;
+    transition: width 0.4s ease-in-out;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgb(221, 101, 101);
+    color: rgb(226, 161, 161);
     opacity: 1; /* Firefox */
 }
 
