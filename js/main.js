@@ -76,6 +76,10 @@ const getMovieData = ('submit', (e) => {
                 let movie = jsonData.Search
                 // console.log(jsonData.Search)
                 movie.forEach(addMovie)
+                let button = document.createElement('button');
+                button.setAttribute('id', 'loadMore');
+                button.textContent = 'more!'
+                movieList.appendChild(button);
             })
             .catch((error) => {
                 let errorMessage = document.createElement('div');
@@ -92,6 +96,9 @@ const getMovieData = ('submit', (e) => {
                 movieList.appendChild(li);
                 li.onclick = getMovieDetails
             }
+            // let button = document.createElement('button');
+            // button.setAttribute('src', 'loadMore');
+            // document.querySelector('p').appendChild(button);
     })
 
 form.addEventListener('submit', getMovieData)

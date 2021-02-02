@@ -10,12 +10,18 @@ body {
     background-color: lavenderblush;
 }
 h1 {
-    font-size: 75px;
+    font-size: 70px;
     text-align: center;
     color:rgb(103, 202, 103);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+#instructions {
+    color:rgb(135, 131, 224);
+    font-size:18px;
+    text-align: left;
+    margin-left: 8.5%;
+}
 li { 
     cursor: pointer; 
 }
@@ -49,7 +55,7 @@ li:hover {
 	box-shadow:inset 0px 1px 0px 0px #fce2c1;
 	background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
 	background-color:#ffc477;
-	border-radius:6px;
+	border-radius:15px;
 	border:1px solid #eeb44f;
 	display:inline-block;
 	cursor:pointer;
@@ -69,9 +75,35 @@ li:hover {
 	position:relative;
 	top:1px;
 }
+#loadMore {
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:linear-gradient(to bottom, #6362c0 5%, #4d4986 100%);
+	background-color:#786db9;
+	border-radius:15px;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	cursor:pointer;
+	color:#e2f3ec;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	padding:2px 12px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #cc9f52;
+}
+#loadMore:hover {
+	background:linear-gradient(to bottom, #a3a4db 5%, #b4b0e0 100%);
+	background-color:#646e97;
+}
+#loadMore:active {
+	position:relative;
+	top:1px;
+}
+
 #input{
     background-color: #dbc5f5;
     padding-left: 10px;
+    border:1px solid #eeb44f
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
