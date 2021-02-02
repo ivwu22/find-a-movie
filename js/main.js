@@ -60,6 +60,7 @@ const getMovieDetails = (movie) => {
         
     })
 }
+
     
 const getMovieData = ('submit', (e) => {
     // instructions.innerHTML = 'Please click on title for more details!';
@@ -93,7 +94,8 @@ const getMovieData = ('submit', (e) => {
                         jsonReturns = json2Data;
                         let movie2 = json2Data.Search
                         movie2.forEach(addMovie);
-                        button.remove()
+                        button.remove();
+                        pageNumber++
                     })
                     .catch((e) => {
                         let errorMessage = document.createElement('div');
@@ -104,7 +106,7 @@ const getMovieData = ('submit', (e) => {
                         button.remove();
                     })
                 }
-            })
+        })
             .catch((error) => {
                 instructions.innerHTML = null;
                 let errorMessage = document.createElement('div');
@@ -125,5 +127,27 @@ const getMovieData = ('submit', (e) => {
             // button.setAttribute('src', 'loadMore');
             // document.querySelector('p').appendChild(button);
     })
-
+//     const loadMore = (evt) => {
+//         evt.preventDefault();
+//         fetch(requestUrlTitle +(input.value.toLowerCase() +'&page='+pageNumber))
+//         // http://www.omdbapi.com/?apikey=b749840a&s=mulan&page=2
+//         .then((reponse2Data) => {
+//             return reponse2Data.json();
+//         })
+//         .then((json2Data) => {
+//             jsonReturns = json2Data;
+//             let movie2 = json2Data.Search
+//             movie2.forEach(addMovie);
+//             button.remove();
+//             pageNumber++
+//         })
+//         .catch((e) => {
+//             let errorMessage = document.createElement('div');
+//             errorMessage.setAttribute('id', 'error');
+//             errorMessage.textContent = (e, `No more results!`);
+//             movieList.appendChild(errorMessage)
+//             clearMovieData();
+//             button.remove();
+//         })
+// }
 form.addEventListener('submit', getMovieData)
