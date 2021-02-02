@@ -59,6 +59,8 @@ const getMovieDetails = (movie) => {
 }
     
 const getMovieData = ('submit', (e) => {
+    let instructions = document.querySelector('#instructions')
+    instructions.innerHTML = 'Please click on title for more details!';
         e.preventDefault();
         while (movieList.firstChild) {
             movieList.removeChild(movieList.firstChild)
