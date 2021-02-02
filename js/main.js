@@ -95,6 +95,14 @@ const getMovieData = ('submit', (e) => {
                         movie2.forEach(addMovie);
                         button.remove()
                     })
+                    .catch((e) => {
+                        let errorMessage = document.createElement('div');
+                        errorMessage.setAttribute('id', 'error');
+                        errorMessage.textContent = (e, `No more results!`);
+                        movieList.appendChild(errorMessage)
+                        clearMovieData();
+                        button.remove();
+                    })
                 }
             })
             .catch((error) => {
