@@ -13,7 +13,7 @@ h1 {
     font-size: 65px;
     text-align: center;
     color:rgb(151, 204, 151);
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 form {
     padding-bottom: 20px;
@@ -45,7 +45,7 @@ li:hover {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: left;
     margin-left: 7%;
-    padding-bottom: 1mm
+    padding-bottom: 1mm;
 }
 
 #plot {
@@ -62,7 +62,7 @@ li:hover {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: left;
     margin-left: 7%;
-    padding-bottom: 2mm
+    padding-bottom: 2mm;
 }
 #rating {
     color:rgb(142, 69, 151);
@@ -70,7 +70,7 @@ li:hover {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: left;
     margin-left: 7%;
-    padding-bottom: 1mm
+    padding-bottom: 1mm;
 }
 
 #poster {
@@ -78,6 +78,7 @@ li:hover {
     margin-left: auto;
     margin-right: auto;
     width: 30%;
+    grid-area: details
 }
 
 #movies {
@@ -103,7 +104,7 @@ li:hover {
 	font-weight:bold;
 	padding:3px 12px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #cc9f52;
+    text-shadow:0px 1px 0px #cc9f52;
 }
 #submit:hover {
 	background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
@@ -164,3 +165,27 @@ li:hover {
 ::-ms-input-placeholder { /* Microsoft Edge */
     color: rgb(221, 101, 101);
 }
+
+
+
+/* @media only screen and (min-width: 1024px) {
+    #beginning {
+        grid-area: hdr;
+    }
+    #details {
+        grid-area: details;
+    }
+    #movielist {
+        grid-area: lft;
+    }
+    body {
+        height: 100vh;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        grid-template-rows: 100px 50px;
+        grid-template-areas: 
+            "hdr" "hdr"
+            "lft" "details";
+    }
+} */

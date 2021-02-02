@@ -12,6 +12,7 @@ const instructions = document.querySelector('#instructions')
 let pageNumber = 2;
 
 let jsonReturns = null;
+
 let gitPages = "https://cors-anywhere.herokuapp.com/"
 
 let requestUrlTitle = "https://www.omdbapi.com/?apikey="+key.apikey + "a&s=";
@@ -19,8 +20,6 @@ let requestUrlImDbId = "https://www.omdbapi.com/?apikey=" + key.apikey + "a&i="
 let input = document.querySelector('#input')
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    // console.log("fired")
-    // console.log(input.value)
 })
 
 const clearMovieData = () => {
@@ -33,17 +32,6 @@ const clearMovieData = () => {
     poster.src = "";
 }
 
-// const addMovieData = () => {
-//     title.textContent = responseJson.Title;
-//     year.innerHTML = `This was released in ${responseJson.Year}`;
-//     genre.innerHTML = `Genre: ${responseJson.Genre}`;
-//     plot.innerHTML = `Brief plot: ${responseJson.Plot}`;
-//     actors.innerHTML = `Actors: ${responseJson.Actors}`;
-//     rating.innerHTML = `IMDb Rating: ${responseJson.imdbRating}`;
-//     poster.src = responseJson.Poster;
-// }
-
-// document.addEventListener("DOMContentLoaded", () => {
 const getMovieDetails = (movie) => {
     //fetch with ImDbID instead of name becauseif movies has repeated names (mulan) it will just search mulan and return same results for bother
     fetch(requestUrlImDbId + (movie.target.id))
@@ -57,13 +45,11 @@ const getMovieDetails = (movie) => {
         actors.innerHTML = `Actors: ${responseJson.Actors}`;
         rating.innerHTML = `IMDb Rating: ${responseJson.imdbRating}`;
         poster.src = responseJson.Poster;
-        
     })
 }
 
     
 const getMovieData = ('submit', (e) => {
-    // instructions.innerHTML = 'Please click on title for more details!';
         e.preventDefault();
         while (movieList.firstChild) {
             movieList.removeChild(movieList.firstChild)
@@ -76,38 +62,14 @@ const getMovieData = ('submit', (e) => {
             })
             .then((jsonData) => {
                 jsonReturns = jsonData;
-                // console.log(jsonData)
-                instructions.innerHTML = 'Please click on title for more details!';
+                instructions.innerHTML = 'Please click on title for more details shown below!';
                 let movie = jsonData.Search
-                // console.log(jsonData.Search)
                 movie.forEach(addMovie)
                 button.setAttribute('id', 'loadMore');
                 button.innerHTML = 'click for more!'
                 movieList.appendChild(button);
-                button.onclick = loadMore//(evt) => {
-                    // evt.preventDefault();
-                    // fetch(requestUrlTitle +(input.value.toLowerCase() +'&page='+pageNumber))
-                    // // http://www.omdbapi.com/?apikey=b749840a&s=mulan&page=2
-                    // .then((reponse2Data) => {
-                    //     return reponse2Data.json();
-                    // })
-                    // .then((json2Data) => {
-                    //     jsonReturns = json2Data;
-                    //     let movie2 = json2Data.Search
-                    //     movie2.forEach(addMovie);
-                    //     button.remove();
-                    //     pageNumber++
-                    // })
-                    // .catch((e) => {
-                    //     let errorMessage = document.createElement('div');
-                    //     errorMessage.setAttribute('id', 'error');
-                    //     errorMessage.textContent = (e, `No more results!`);
-                    //     movieList.appendChild(errorMessage)
-                    //     clearMovieData();
-                    //     button.remove();
-                    })
-                // })
-        // })
+                button.onclick = loadMore;
+            })
             .catch((error) => {
                 instructions.innerHTML = null;
                 let errorMessage = document.createElement('div');
@@ -116,18 +78,16 @@ const getMovieData = ('submit', (e) => {
                 movieList.appendChild(errorMessage)
                 clearMovieData();
             })
-            const addMovie = (movie) => {
+            function addMovie (movie) {
                 let li = document.createElement('li');
                 li.setAttribute('id', movie.imdbID)
                 li.innerHTML = `${movie.Title} (${movie.Year})`;
-                // console.log(movie.Title)
                 movieList.appendChild(li);
-                li.onclick = getMovieDetails
+                li.onclick = getMovieDetails;
             }
             const loadMore = (evt) => {
                 evt.preventDefault();
                 fetch(requestUrlTitle +(input.value.toLowerCase() +'&page='+pageNumber))
-                // http://www.omdbapi.com/?apikey=b749840a&s=mulan&page=2
                 .then((reponse2Data) => {
                     return reponse2Data.json();
                 })
@@ -147,9 +107,6 @@ const getMovieData = ('submit', (e) => {
                     clearMovieData();
                     button.remove();
                 })
-            // let button = document.createElement('button');
-            // button.setAttribute('src', 'loadMore');
-            // document.querySelector('p').appendChild(button);
     }
 })
 
