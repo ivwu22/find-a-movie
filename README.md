@@ -4,7 +4,7 @@ An embedded screenshot of the app
 
 List of the Technologies used
 
- nstallation instructions
+Installation instructions
 
 Your User stories – who are your users, what do they want and why?
 

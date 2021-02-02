@@ -35,6 +35,12 @@ li:hover {
     color: blue;
 }
 
+#genre, #plot, #actors, #rating {
+    color:rgb(113, 112, 150);
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 #poster {
     display: block;
     margin-left: auto;
