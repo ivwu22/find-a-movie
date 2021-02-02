@@ -14,8 +14,8 @@ let pageNumber = 2;
 let jsonReturns = null;
 let gitPages = "https://cors-anywhere.herokuapp.com/"
 
-let requestUrlTitle = "https://cors-anywhere.herokuapp.com/https://www.omdbapi.com/?apikey="+key.apikey + "a&s=";
-let requestUrlImDbId = "https://cors-anywhere.herokuapp.com/https://www.omdbapi.com/?apikey=" + key.apikey + "a&i="
+let requestUrlTitle = "https://www.omdbapi.com/?apikey="+key.apikey + "a&s=";
+let requestUrlImDbId = "https://www.omdbapi.com/?apikey=" + key.apikey + "a&i="
 let input = document.querySelector('#input')
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
@@ -69,6 +69,7 @@ const getMovieData = ('submit', (e) => {
             movieList.removeChild(movieList.firstChild)
         }
         clearMovieData();
+        pageNumber = 2;
         fetch(requestUrlTitle+(input.value.toLowerCase()))
             .then((responseData) => {
                 return responseData.json();
@@ -83,30 +84,30 @@ const getMovieData = ('submit', (e) => {
                 button.setAttribute('id', 'loadMore');
                 button.innerHTML = 'click for more!'
                 movieList.appendChild(button);
-                button.onclick = (evt) => {
-                    evt.preventDefault();
-                    fetch(requestUrlTitle +(input.value.toLowerCase() +'&page='+pageNumber))
-                    // http://www.omdbapi.com/?apikey=b749840a&s=mulan&page=2
-                    .then((reponse2Data) => {
-                        return reponse2Data.json();
+                button.onclick = loadMore//(evt) => {
+                    // evt.preventDefault();
+                    // fetch(requestUrlTitle +(input.value.toLowerCase() +'&page='+pageNumber))
+                    // // http://www.omdbapi.com/?apikey=b749840a&s=mulan&page=2
+                    // .then((reponse2Data) => {
+                    //     return reponse2Data.json();
+                    // })
+                    // .then((json2Data) => {
+                    //     jsonReturns = json2Data;
+                    //     let movie2 = json2Data.Search
+                    //     movie2.forEach(addMovie);
+                    //     button.remove();
+                    //     pageNumber++
+                    // })
+                    // .catch((e) => {
+                    //     let errorMessage = document.createElement('div');
+                    //     errorMessage.setAttribute('id', 'error');
+                    //     errorMessage.textContent = (e, `No more results!`);
+                    //     movieList.appendChild(errorMessage)
+                    //     clearMovieData();
+                    //     button.remove();
                     })
-                    .then((json2Data) => {
-                        jsonReturns = json2Data;
-                        let movie2 = json2Data.Search
-                        movie2.forEach(addMovie);
-                        button.remove();
-                        pageNumber++
-                    })
-                    .catch((e) => {
-                        let errorMessage = document.createElement('div');
-                        errorMessage.setAttribute('id', 'error');
-                        errorMessage.textContent = (e, `No more results!`);
-                        movieList.appendChild(errorMessage)
-                        clearMovieData();
-                        button.remove();
-                    })
-                }
-        })
+                // })
+        // })
             .catch((error) => {
                 instructions.innerHTML = null;
                 let errorMessage = document.createElement('div');
@@ -123,31 +124,33 @@ const getMovieData = ('submit', (e) => {
                 movieList.appendChild(li);
                 li.onclick = getMovieDetails
             }
+            const loadMore = (evt) => {
+                evt.preventDefault();
+                fetch(requestUrlTitle +(input.value.toLowerCase() +'&page='+pageNumber))
+                // http://www.omdbapi.com/?apikey=b749840a&s=mulan&page=2
+                .then((reponse2Data) => {
+                    return reponse2Data.json();
+                })
+                .then((json2Data) => {
+                    jsonReturns = json2Data;
+                    let movie2 = json2Data.Search
+                    movie2.forEach(addMovie);
+                    button.remove();
+                    pageNumber++
+                    movieList.appendChild(button);
+                })
+                .catch((e) => {
+                    let errorMessage = document.createElement('div');
+                    errorMessage.setAttribute('id', 'error');
+                    errorMessage.textContent = (e, `No more results!`);
+                    movieList.appendChild(errorMessage)
+                    clearMovieData();
+                    button.remove();
+                })
             // let button = document.createElement('button');
             // button.setAttribute('src', 'loadMore');
             // document.querySelector('p').appendChild(button);
-    })
-//     const loadMore = (evt) => {
-//         evt.preventDefault();
-//         fetch(requestUrlTitle +(input.value.toLowerCase() +'&page='+pageNumber))
-//         // http://www.omdbapi.com/?apikey=b749840a&s=mulan&page=2
-//         .then((reponse2Data) => {
-//             return reponse2Data.json();
-//         })
-//         .then((json2Data) => {
-//             jsonReturns = json2Data;
-//             let movie2 = json2Data.Search
-//             movie2.forEach(addMovie);
-//             button.remove();
-//             pageNumber++
-//         })
-//         .catch((e) => {
-//             let errorMessage = document.createElement('div');
-//             errorMessage.setAttribute('id', 'error');
-//             errorMessage.textContent = (e, `No more results!`);
-//             movieList.appendChild(errorMessage)
-//             clearMovieData();
-//             button.remove();
-//         })
-// }
+    }
+})
+
 form.addEventListener('submit', getMovieData)

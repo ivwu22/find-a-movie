@@ -27,7 +27,7 @@ form {
 li { 
     cursor: pointer;
     color:rgb(33, 92, 33);
-    font-size: 18px;
+    font-size: 20px;
 }
 li:hover {
     font-style: italic;
@@ -99,7 +99,7 @@ li:hover {
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:12px;
+	font-size:14px;
 	font-weight:bold;
 	padding:3px 12px;
 	text-decoration:none;
