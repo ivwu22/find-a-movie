@@ -168,24 +168,38 @@ li:hover {
 
 
 
-/* @media only screen and (min-width: 1024px) {
-    #beginning {
-        grid-area: hdr;
+/* @media only screen and (min-width: 768px)
+    * {
+        box-sizing: border-box;
     }
-    #details {
-        grid-area: details;
-    }
-    #movielist {
-        grid-area: lft;
-    }
-    body {
-        height: 100vh;
-        margin: 0;
-        display: grid;
-        grid-template-columns: 4fr 1fr;
-        grid-template-rows: 100px 50px;
-        grid-template-areas: 
-            "hdr" "hdr"
-            "lft" "details";
-    }
+}
+body {
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 50px auto 30px;
+    grid-template-areas: 
+        "hdr" "hdr"
+        "lft" "details"
+        "ftr" "ftr";
+}
+header {
+    grid-area: hdr;
+}
+#details {
+    grid-area: details;
+}
+#movielist {
+    grid-area: lft;
+}
+footer {
+    grid-area: ftr;
+    background-color: crimson;
+}
+
+header, #details, #movielist, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 } */
