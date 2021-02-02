@@ -98,6 +98,7 @@ const getMovieData = ('submit', (e) => {
                 }
             })
             .catch((error) => {
+                instructions.innerHTML = null;
                 let errorMessage = document.createElement('div');
                 errorMessage.setAttribute('id', 'error');
                 errorMessage.textContent = (error, `Please try again. Reason: ${jsonReturns.Error}`);
