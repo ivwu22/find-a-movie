@@ -7,12 +7,14 @@ const actors = document.getElementById("actors");
 const poster = document.getElementById('poster');
 const movieList = document.getElementById('movies');
 const rating = document.getElementById('rating')
+const button = document.createElement('button');
+const instructions = document.querySelector('#instructions')
 
 let jsonReturns = null;
 let gitPages = "https://cors-anywhere.herokuapp.com/http://"
 
-let requestUrlTitle = "https://www.omdbapi.com/?apikey="+key.apikey + "a&s=";
-let requestUrlImDbId = "https://www.omdbapi.com/?apikey=" + key.apikey + "a&i="
+let requestUrlTitle = gitPages + "https://www.omdbapi.com/?apikey="+key.apikey + "a&s=";
+let requestUrlImDbId = gitPages + "https://www.omdbapi.com/?apikey=" + key.apikey + "a&i="
 let input = document.querySelector('#input')
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
@@ -59,8 +61,7 @@ const getMovieDetails = (movie) => {
 }
     
 const getMovieData = ('submit', (e) => {
-    let instructions = document.querySelector('#instructions')
-    instructions.innerHTML = 'Please click on title for more details!';
+    // instructions.innerHTML = 'Please click on title for more details!';
         e.preventDefault();
         while (movieList.firstChild) {
             movieList.removeChild(movieList.firstChild)
@@ -73,12 +74,12 @@ const getMovieData = ('submit', (e) => {
             .then((jsonData) => {
                 jsonReturns = jsonData;
                 // console.log(jsonData)
+                instructions.innerHTML = 'Please click on title for more details!';
                 let movie = jsonData.Search
                 // console.log(jsonData.Search)
                 movie.forEach(addMovie)
-                let button = document.createElement('button');
                 button.setAttribute('id', 'loadMore');
-                button.textContent = 'more!'
+                button.innerHTML = 'click for more!'
                 movieList.appendChild(button);
             })
             .catch((error) => {
