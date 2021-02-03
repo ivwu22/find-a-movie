@@ -9,7 +9,8 @@ body {
     text-align: center;
     background-color: lavenderblush;
     background-image: url('moviecurtains.jpg');
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
+    background-size: 500%;
 }
 h1 {
     font-size: 65px;
@@ -25,6 +26,7 @@ form {
     font-size:20px;
     font-weight: 200;
     margin: 0 auto;
+    font-weight: 350;
 }
 li { 
     cursor: pointer;
@@ -105,17 +107,31 @@ li:hover {
 	font-family:Arial;
 	font-size:14px;
 	font-weight:bold;
-	padding:3px 12px;
-	text-decoration:none;
+    padding:3px 12px;
     text-shadow:0px 1px 0px #cc9f52;
+    background-image: url('popcorn.png');
+    background-size: 22px;
+    background-position: 3px 3px; 
+    background-repeat: no-repeat;
+    padding: 8px 8px 8px 30px;
 }
 #submit:hover {
 	background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
-	background-color:#fb9e25;
+    background-color:#fb9e25;
+    background-image: url('popcorn.png');
+    background-size: 22px;
+    background-position: 3px 3px; 
+    background-repeat: no-repeat;
+    padding: 8px 8px 8px 30px;
 }
 #submit:active {
 	position:relative;
-	top:1px;
+    top:1px;
+    background-image: url('popcorn.png');
+    background-size: 22px;
+    background-position: 3px 3px; 
+    background-repeat: no-repeat;
+    padding: 8px 8px 8px 30px;
 }
 #loadMore {
 	box-shadow:inset 0px 1px 0px 0px #fce2c1;
@@ -154,6 +170,8 @@ li:hover {
     background-repeat: no-repeat;
     padding: 8px 10px 6px 34px;
     transition: width 0.4s ease-in-out;
+    opacity: 0.5;
+
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -170,11 +188,10 @@ li:hover {
 }
 
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 868px) {
     #title, #genre, #plot, #rating, #actors, #poster {
         margin:4px ;
         grid-area: details;
-        top:-40px;
     }
     #poster {
         margin: 0 auto;
