@@ -8,6 +8,8 @@ body {
     display: grid;
     text-align: center;
     background-color: lavenderblush;
+    background-image: url('moviecurtains.jpg');
+    /* background-repeat: no-repeat; */
 }
 h1 {
     font-size: 65px;
@@ -26,7 +28,7 @@ form {
 }
 li { 
     cursor: pointer;
-    color:rgb(33, 92, 33);
+    color:rgb(97, 182, 97);
     font-size: 20px;
 }
 li:hover {
@@ -36,7 +38,8 @@ li:hover {
 
 #title {
     font-size: 40px;
-    color: rgb(31, 93, 207);
+    color: rgb(119, 177, 211);
+    font-style: underline;
 }
 
 #genre {
@@ -78,7 +81,6 @@ li:hover {
     margin-left: auto;
     margin-right: auto;
     width: 30%;
-    grid-area: details
 }
 
 #movies {
@@ -168,38 +170,39 @@ li:hover {
 
 
 
-/* @media only screen and (min-width: 768px)
-    * {
+ @media only screen and (min-width: 768px) {
+    #title, #genre, #plot, #rating, #actors, #poster {
+        width:50%;
+        margin:4px ;
+        float:right;
+        grid-area: details;
+        top:-40px;
+    }
+
+    * { 
         box-sizing: border-box;
     }
-}
-body {
-    height: 100vh;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 50px auto 30px;
-    grid-template-areas: 
-        "hdr" "hdr"
-        "lft" "details"
-        "ftr" "ftr";
-}
-header {
-    grid-area: hdr;
-}
-#details {
-    grid-area: details;
-}
-#movielist {
-    grid-area: lft;
-}
-footer {
-    grid-area: ftr;
-    background-color: crimson;
-}
 
-header, #details, #movielist, footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+    body {
+        height: 100vh;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "hdr" "hdr"
+            "lft" "details";
+    }
+    header {
+        grid-area: hdr;
+    }
+
+    #movielist {
+        grid-area: lft;
+    }
+}
+    /* header, #details, #movielist, footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }/*
