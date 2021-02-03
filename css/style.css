@@ -10,7 +10,7 @@ body {
     background-color: lavenderblush;
     background-image: url('moviecurtains.jpg');
     background-repeat: no-repeat;
-    background-size: 500%;
+    background-size: 800%;
 }
 h1 {
     font-size: 65px;
@@ -45,7 +45,7 @@ li:hover {
     font-style: italic;
 }
 
-#genre {
+#genre, #plot, #actors, #rating {
     color:rgb(215, 180, 219);
     font-size: 18px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -54,29 +54,8 @@ li:hover {
     padding-bottom: 1mm;
 }
 
-#plot {
-    color:rgb(215, 180, 219);
-    font-size: 18px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: left;
-    margin-left: 7%;
-    padding-bottom: 1mm;
-}
 #actors {
-    color:rgb(215, 180, 219);
-    font-size: 18px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: left;
-    margin-left: 7%;
     padding-bottom: 2mm;
-}
-#rating {
-    color:rgb(215, 180, 219);
-    font-size: 18px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: left;
-    margin-left: 7%;
-    padding-bottom: 1mm;
 }
 
 #poster {
@@ -135,17 +114,17 @@ li:hover {
 }
 #loadMore {
 	box-shadow:inset 0px 1px 0px 0px #fce2c1;
-	background:linear-gradient(to bottom, #6362c0 5%, #4d4986 100%);
-	background-color:#786db9;
-	border-radius:15px;
-	border:1px solid #eeb44f;
+	background:linear-gradient(to bottom, #9998d4 5%, #4d4986 100%);
+	background-color:#a69ddd;
+	border-radius:10px;
+	border:1px solid #e7ca97;
 	display:inline-block;
 	cursor:pointer;
 	color:#e2f3ec;
 	font-family:Arial;
 	font-size:12px;
 	font-weight:bold;
-	padding:2px 12px;
+	padding:2px 10px;
 	text-decoration:none;
     text-shadow:0px 1px 0px #cc9f52;
 }
@@ -200,11 +179,6 @@ li:hover {
     li {
         font-size: 25px;
     }
-
-    * { 
-        box-sizing: border-box;
-    }
-
     body {
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 275px auto;

@@ -3,7 +3,7 @@ const title = document.getElementById('title');
 const year = document.getElementById('releaseYear');
 const genre = document.getElementById('genre');
 const plot = document.getElementById('plot');
-const actors = document.getElementById("actors");
+const actors = document.getElementById('actors');
 const poster = document.getElementById('poster');
 const movieList = document.getElementById('movies');
 const rating = document.getElementById('rating')
@@ -18,6 +18,7 @@ let gitPages = "https://cors-anywhere.herokuapp.com/"
 let requestUrlTitle = "https://www.omdbapi.com/?apikey="+key.apikey + "a&s=";
 let requestUrlImDbId = "https://www.omdbapi.com/?apikey=" + key.apikey + "a&i="
 let input = document.querySelector('#input')
+
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
 })
