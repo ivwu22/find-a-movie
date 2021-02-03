@@ -23,12 +23,12 @@ form {
 #instructions {
     color:rgb(122, 117, 224);
     font-size:20px;
-    text-align: left;
-    margin-left: 8.5%;
+    font-weight: 200;
+    margin: 0 auto;
 }
 li { 
     cursor: pointer;
-    color:rgb(97, 182, 97);
+    color:rgb(152, 206, 152);
     font-size: 20px;
 }
 li:hover {
@@ -39,11 +39,12 @@ li:hover {
 #title {
     font-size: 40px;
     color: rgb(119, 177, 211);
-    font-style: underline;
+    font-weight: 600;
+    font-style: italic;
 }
 
 #genre {
-    color:rgb(142, 69, 151);
+    color:rgb(215, 180, 219);
     font-size: 18px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: left;
@@ -52,7 +53,7 @@ li:hover {
 }
 
 #plot {
-    color:rgb(142, 69, 151);
+    color:rgb(215, 180, 219);
     font-size: 18px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: left;
@@ -60,7 +61,7 @@ li:hover {
     padding-bottom: 1mm;
 }
 #actors {
-    color:rgb(142, 69, 151);
+    color:rgb(215, 180, 219);
     font-size: 18px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: left;
@@ -68,7 +69,7 @@ li:hover {
     padding-bottom: 2mm;
 }
 #rating {
-    color:rgb(142, 69, 151);
+    color:rgb(215, 180, 219);
     font-size: 18px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: left;
@@ -80,7 +81,7 @@ li:hover {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 30%;
+    width: 50%;
 }
 
 #movies {
@@ -169,14 +170,18 @@ li:hover {
 }
 
 
-
- @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
     #title, #genre, #plot, #rating, #actors, #poster {
-        width:50%;
         margin:4px ;
-        float:right;
         grid-area: details;
         top:-40px;
+    }
+    #poster {
+        margin: 0 auto;
+        width: 30%;
+    }
+    li {
+        font-size: 25px;
     }
 
     * { 
@@ -184,14 +189,11 @@ li:hover {
     }
 
     body {
-        height: 100vh;
-        margin: 0;
-        display: grid;
-        grid-template-columns: 2fr 2fr;
-        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 275px auto;
         grid-template-areas: 
-            "hdr" "hdr"
-            "lft" "details";
+            "hdr hdr"
+            "lft details";
     }
     header {
         grid-area: hdr;
@@ -200,9 +202,4 @@ li:hover {
     #movielist {
         grid-area: lft;
     }
-}
-    /* header, #details, #movielist, footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }/*
+} 
