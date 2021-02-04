@@ -54,6 +54,10 @@ li:hover {
     padding-bottom: 1mm;
 }
 
+.type {
+    color:cornflowerblue;
+}
+
 #actors {
     padding-bottom: 2mm;
 }

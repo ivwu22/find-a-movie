@@ -22,6 +22,8 @@ I would also like to include a function that when the user clicks on the title, 
 
 "As a user, I want to be able to look up a movie/show, so that I can learn more about the movie/show before I watch it"
 
+"As a user, I want to be able to use the web on my moblie and laptop so that I can browse on the go as well"
+
 
 Your Wireframes – sketches of major views / interfaces in your application
 ![wireframe start page](/images/wireframestart.png)
@@ -38,5 +40,9 @@ One of the major hurdles that were faced in the making of the project was implem
 Other hurdles were resetting the page after each search which I was able to complete with adding a clear function and implementing that before each fetch so the page is cleaned/resetted before adding more data.
 
 ![clear function](/images/clearfunction.png)
+
+Also when I was fetching the additional information, I tested the results out with a title that leads to two different movies (Mulan) and noticed that the additional infomation was the same. Then I realized that I had to do a separate parameter for the fetch based on the IMBd ID to make it more specific to the movie versus searching by title name since that would just result in the same one. 
+
+![separate fetch](/images/separatefetch.png)
 
 A current unsolved problem is the API Key. Since the API I am using requires a key to access the data, it was important to protect the key from the public eye. However, since this project is solely running front-end, the contraints only allowed me to hide the key from causing error by making a separate js file and using the "https://cors-anywhere.herokuapp.com/" in front of the API url for fetching.

@@ -1,4 +1,4 @@
-const form = document.querySelector('form')
+const form = document.querySelector('form');
 const title = document.getElementById('title');
 const year = document.getElementById('releaseYear');
 const genre = document.getElementById('genre');
@@ -6,9 +6,9 @@ const plot = document.getElementById('plot');
 const actors = document.getElementById('actors');
 const poster = document.getElementById('poster');
 const movieList = document.getElementById('movies');
-const rating = document.getElementById('rating')
+const rating = document.getElementById('rating');
 const button = document.createElement('button');
-const instructions = document.querySelector('#instructions')
+const instructions = document.querySelector('#instructions');
 let pageNumber = 2;
 
 let jsonReturns = null;
@@ -45,11 +45,11 @@ const getMovieDetails = (movie) => {
         return response.json();
     })
     .then((responseJson) => {
-        title.textContent = responseJson.Title;
-        genre.innerHTML = `Genre: ${responseJson.Genre}`;
-        plot.innerHTML = `Brief plot: ${responseJson.Plot}`;
-        actors.innerHTML = `Actors: ${responseJson.Actors}`;
-        rating.innerHTML = `IMDb Rating: ${responseJson.imdbRating}`;
+        title.textContent = `${responseJson.Title} (${responseJson.Year})`;
+        genre.innerHTML = `<span class='type'> Genre </span>: ${responseJson.Genre}`;
+        plot.innerHTML = `<span class='type'> Brief Plot </span>: ${responseJson.Plot}`;
+        actors.innerHTML = `<span class='type'> Actors </span>: ${responseJson.Actors}`;
+        rating.innerHTML = `<span class='type'> IMDb rating </span>: ${responseJson.imdbRating}`;
         poster.src = responseJson.Poster;
     })
 }
