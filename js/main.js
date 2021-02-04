@@ -20,8 +20,8 @@ let gitPages = "https://cors-anywhere.herokuapp.com/"
 // let requestUrlTitle = "https://cors-anywhere.herokuapp.com/https://www.omdbapi.com/?apikey="+ apiKey + "a&s=";
 // let requestUrlImDbId = "https://cors-anywhere.herokuapp.com/https://www.omdbapi.com/?apikey="+ apiKey + "a&i=";
 
-let requestUrlTitle = "https://cors-anywhere.herokuapp.com/https://www.omdbapi.com/?apikey="+key.apikey + "a&s=";
-let requestUrlImDbId = "https://cors-anywhere.herokuapp.com/https://www.omdbapi.com/?apikey=" + key.apikey + "a&i="
+let requestUrlTitle = "https://www.omdbapi.com/?apikey="+key.apikey + "a&s=";
+let requestUrlImDbId = "https://www.omdbapi.com/?apikey=" + key.apikey + "a&i="
 let input = document.querySelector('#input')
 
 form.addEventListener('submit', (evt) => {
