@@ -1,11 +1,11 @@
 # find-a-movie
-An embedded screenshot of the app
+***An embedded screenshot of the app**
 
 ![start page](/images/whattowatchstartpage.png)
 
 ![result page](/images/whattowatchresultpage.png)
 
-List of the Technologies used
+***List of the Technologies used***
 - Javascript
 - HTML
 - CSS
@@ -13,7 +13,7 @@ List of the Technologies used
 - favicon generator
 - button generator
 
-Your User stories – who are your users, what do they want and why?
+***Your User stories – who are your users, what do they want and why?***
 
 My webpage will let users find movies/shows that they want to watch.
 Features that will be available will be searching by a movie/show name or by keyword and associated titles will appear in a list of 10 with click for more to load more results
@@ -25,13 +25,13 @@ I would also like to include a function that when the user clicks on the title, 
 "As a user, I want to be able to use the web on my moblie and laptop so that I can browse on the go as well"
 
 
-Your Wireframes – sketches of major views / interfaces in your application
+***Your Wireframes – sketches of major views / interfaces in your application***
 ![wireframe start page](/images/wireframestart.png)
 
 ![wireframe start page](/images/wireframeresult.png)
 
 
-Descriptions of any Unsolved problems or major hurdles you had to overcome
+***Descriptions of any Unsolved problems or major hurdles you had to overcome***
 
 One of the major hurdles that were faced in the making of the project was implementing the click for more option. At first I had started to nest fetches within each other and hard coding the page numbers but as I was doing it I recognized that it is not DRY code and that there has to be a way to  make this simplier and more dynamic. I started looking at my code and saw that only the pagenumber was different from the rest and set a pageNumber variable and incremented it each time the button was pressed. 
 
