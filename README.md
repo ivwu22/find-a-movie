@@ -1,5 +1,6 @@
 # find-a-movie
-***An embedded screenshot of the app**
+
+***An embedded screenshot of the app***
 
 ![start page](/images/whattowatchstartpage.png)
 
