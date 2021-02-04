@@ -39,4 +39,4 @@ Other hurdles were resetting the page after each search which I was able to comp
 
 ![clear function](/images/clearfunction.png)
 
-A current unsolved problem is the API Key. 
+A current unsolved problem is the API Key. Since the API I am using requires a key to access the data, it was important to protect the key from the public eye. However, since this project is solely running front-end, the contraints only allowed me to hide the key from causing error by making a separate js file and using the "https://cors-anywhere.herokuapp.com/" in front of the API url for fetching.
