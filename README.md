@@ -1,4 +1,4 @@
-# find-a-movie
+# What to watch?
 
 ***An embedded screenshot of the app***
 
