@@ -11,7 +11,7 @@ List of the Technologies used
 - CSS
 - API (http://www.omdbapi.com/)
 - favicon generator
-- button genertor
+- button generator
 
 Your User stories – who are your users, what do they want and why?
 
