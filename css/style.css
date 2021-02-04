@@ -150,7 +150,6 @@ li:hover {
     padding: 8px 10px 6px 34px;
     transition: width 0.4s ease-in-out;
     opacity: 0.5;
-
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
