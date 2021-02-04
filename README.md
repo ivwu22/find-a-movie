@@ -45,4 +45,4 @@ Also when I was fetching the additional information, I tested the results out wi
 
 ![separate fetch](/images/separatefetch.png)
 
-A current unsolved problem is the API Key. Since the API I am using requires a key to access the data, it was important to protect the key from the public eye. However, since this project is solely running front-end, the contraints only allowed me to hide the key from causing error by making a separate js file and using the "https://cors-anywhere.herokuapp.com/" in front of the API url for fetching.
+A current unsolved problem is the API Key. Since the API I am using requires a key to access the data, it was important to protect the key from the public eye. However, since this project is solely running front-end, the contraints only allowed me to hide the key from causing error by making a separate js file and using the "https://cors-anywhere.herokuapp.com/" in front of the API url for fetching but this isn't a perfect solution because the secret can still be found and the deployed page doesn't always function correctly.
