@@ -110,7 +110,6 @@ const getMovieData = ('submit', (e) => {
                     errorMessage.setAttribute('id', 'error');
                     errorMessage.textContent = (e, `No more results!`);
                     movieList.appendChild(errorMessage)
-                    clearMovieData();
                     button.remove();
                 })
     }
